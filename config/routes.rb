@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
-  root 'home#index'
+  get '/:locale' => 'home#index'
 
-  devise_for :admins
-  devise_for :users
+  root 'home#index'
+  
+  scope '/:locale' do
+
+    devise_for :admins
+    devise_for :users
+
+  end
   
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 end
