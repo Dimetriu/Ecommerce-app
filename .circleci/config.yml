@@ -42,10 +42,10 @@ jobs:
           command: |
             bundle exec rails db:create
 
-      - run: 
-          name: Load Database Schema
-          command: |
-            bundle exec rails db:schema:load
+      # - run: 
+      #     name: Load Database Schema
+      #     command: |
+      #       bundle exec rails db:schema:load
 
       - type: shell
         command: |
