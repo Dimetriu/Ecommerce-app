@@ -21,4 +21,5 @@
 .byebug_history
 .env
 .env.production
+.fog
 .vscode
