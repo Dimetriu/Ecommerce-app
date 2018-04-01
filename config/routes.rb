@@ -2,9 +2,11 @@ Rails.application.routes.draw do
   root 'home#index'
   scope '/:locale' do
 
-    devise_for :admins, skip: :registrations, controllers: {
-      sessions: 'admins/sesions'
-    }
+    resources :admins
+    # devise_for :admins,
+    #            skip: :registrations,
+    #            controllers: { sessions: 'admins/sessions' }
+
     devise_for :users
 
   end  
