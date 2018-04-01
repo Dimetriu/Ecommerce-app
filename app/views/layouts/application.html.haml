@@ -1,12 +1,15 @@
 !!!
 %html
   %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{name: "viewport", content: "width=device-width"}
     %title Bookstore
     = csrf_meta_tags
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
   %body
-    %p.notice= notice
-    %p.alert= alert
-    = yield
+    .wrapper
+      = render 'shared/header.html.haml'
+      = render 'shared/notifications.html.haml'
+      = yield
+    = render 'shared/footer.html.haml'
