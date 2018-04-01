@@ -12,7 +12,7 @@ jobs:
           POSTGRES_USER: dima
           POSTGRES_DB: bookstore_test
 
-    working_directory: ~/ruby_garage/homeworks/Bookstore/bookstore
+    working_directory: ~/ruby_garage/bookstore/bookstore
 
     steps:
       - checkout
