@@ -25,6 +25,9 @@ module Bookstore
 
     config.autoload_paths << Rails.root.join('lib')
 
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
+    config.i18n.default_locale = :en
+
     config.fog_directory  = ENV['S3_BUCKET']
     
     # Settings in config/environments/* take precedence over those specified here.

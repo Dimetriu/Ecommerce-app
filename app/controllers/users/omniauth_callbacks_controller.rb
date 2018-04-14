@@ -1,6 +1,11 @@
 # frozen_string_literal: true
 
-class Admins::OmniauthCallbacksController < Devise::OmniauthCallbacksController
+class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
+
+  def localized
+    session[:omniauth_login_locale] = I18n.locale
+    redirect_to user_omniauth_authorize_path(params[:provider])
+  end
   # You should configure your model like this:
   # devise :omniauthable, omniauth_providers: [:twitter]
 
