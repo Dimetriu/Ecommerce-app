@@ -6,5 +6,4 @@ class Admin < ApplicationRecord
          :rememberable, 
          :trackable, 
          :validatable,
-         :timeoutable
 end

@@ -3,6 +3,5 @@ class AdminAbility
   def initialize(user)
     return unless user && user.admin?
     can :access, :dashboard
-    can :manage, :all
   end
 end
