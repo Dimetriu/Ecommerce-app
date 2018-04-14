@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
   root 'home#index'
-  scope '/:locale' do
+  
+  devise_for :users, only: :omniauth_callbacks, controllers: { 
+    omniauth_callbacks: 'users/omniauth_callbacks' 
+  }
 
-    resources :admins
-    # devise_for :admins,
-    #            skip: :registrations,
-    #            controllers: { sessions: 'admins/sessions' }
+  scope '(:locale)' do
+    devise_for :admins, skip: :registrations
+    devise_for :users,  skip: :omniauth_callbacks
+  end
 
-    devise_for :users
-
-  end  
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 end
